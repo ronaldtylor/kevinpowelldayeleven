@@ -1,0 +1,190 @@
+/* 
+////// For this challenge ///////
+
+- All text is in the text.md file
+
+// Requirements
+   1. Get all the navigation items next to one another
+   2. Add a space between all the items
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  /* margin-top 0 dedia taaki heading upar ko hojaye */
+  margin-top: 0;
+}
+
+.section-title {
+  /* margin-top 0 dedia taaki heading upar ko hojaye */
+  margin-top: 0;
+  color: #87629a;
+}
+
+.btn {
+  /* display inline-block dedia taaki padding top bottom
+  add hojaye and margin bhi top bottom
+  and side by side hojaye */
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23424a;
+  font-weight: 900;
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  /* display flex lagate hee item shrink hojate hain according to content */
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  /* these are now flex items */
+  /* yahan humne width 100% krdi taaki without item shrink na ho and jitna 
+  content ho uske hisaab se na ho shrink */
+  /* bas screen choti karne par shrink hojayenge apne aap */
+  width: 100%;
+}
+
+.col + .col {
+  /* second waala column select hogya and usse pehle margin left
+  add hogyi.  yeh first column choose nahi krta  */
+  margin-left: 30px;
+}
+
+header {
+  background: #136c72;
+  padding: 0.5em 0;
+}
+
+.nav {
+  padding: 1rem;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* when we set display flex it's going to shrink down small possible size
+  jitna content hoga usi size ke hisaab se shrink*/
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav__link--button {
+  background: #fff;
+  color: #136c72;
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+
+.nav__link:hover {
+  opacity: 0.75;
+}
+
+.nav__item {
+  /* taaki margin ajaye nav items mai kynki space nahi tha flex k baad */
+  margin-right: 1rem;
+}
+
+.hero {
+  padding: 100px 0;
+  background-color: #23424a;
+  color: #fff;
+}
+
+.hero__text {
+  /* yab yeh flex item hai isko width 62% dedi */
+  width: 62%;
+}
+
+.hero__img {
+  /* yab yeh flex item hai isko width 32% dedi */
+  width: 32%;
+  /* align self dedia taai stretch na ho image */
+  align-self: flex-start;
+}
+
+.hero p {
+  margin-bottom: 3em;
+}
+
+.main {
+  /* main margin-top dedia taaki space ajaye */
+  margin-top: 3em;
+}
+
+.primary-content {
+  /* primary content ki width 62% kardi 
+  flex items hain yeh . jitna content hota utni width lete but humne
+  yahan generic width dee h */
+  width: 62%;
+}
+
+.sidebar {
+  /* sidebar ki dedi 32% */
+  /* jitna space bacha usko leleia humne justify content space krke
+  space agaya beeech m */
+  width: 32%;
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  background-color: #136c72;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  /* yeh 600px se neeche hote hee block hojayega flex hatt jayega */
+  .row {
+    display: block;
+  }
+  .hero__text,
+  .hero__img,
+  .primary-content,
+  .sidebar {
+    text-align: center;
+    /* and width jo humne set karin thi 32% 62% woh sab 100% hojayengi */
+    /* taaki small screen par sab full hojaye */
+    width: 100%;
+  }
+
+  .hero__img {
+    margin-top: 2rem;
+  }
+}
